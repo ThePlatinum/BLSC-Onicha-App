@@ -1,21 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import * as Font from 'expo-font'
+import Login from './components/Login';
+import { AppLoading } from 'expo'
+import ModulesStack from './routes/ModulesStack'
+
+const getFonts = () => Font.loadAsync({
+    'merriweather-bold': require('./assets/fonts/Merriweather-Bold.ttf'),
+    'merriweather-Light': require('./assets/fonts/Merriweather-Light.ttf'),
+    'merriweather-LightItalic': require('./assets/fonts/Merriweather-LightItalic.ttf'),
+    'merriweather-Regular': require('./assets/fonts/Merriweather-Regular.ttf')
+  })
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    const [fontsLoaded, setFontsLoaded] = useState(false)
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    getFonts
+    
+    if(!fontsLoaded){
+      return (
+        <ModulesStack />
+      );
+    } else{
+      return (
+        <AppLoading
+          startAsync={getFonts}
+          onFinish={()=> setFontsLoaded(true)}
+        />
+      );
+    }
+  
+}
