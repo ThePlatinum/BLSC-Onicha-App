@@ -16,24 +16,19 @@ export default function Topics({ navigation }) {
             id : 2
             },
         {
-            onichaTopic: 'Start Here 1',
-            topic : 'Start Here',
+            onichaTopic: 'Meet the Instructor',
+            topic : 'Meet the Instructor',
             id : 3
             },
         {
-            onichaTopic: 'Start Here 2',
-            topic : 'Start Here',
+            onichaTopic: 'Accessibility of Course Materials',
+            topic : 'Accessibility of Course Materials',
             id : 4
             },
         {
-            onichaTopic: 'Start Here 3',
-            topic : 'Start Here',
+            onichaTopic: 'Requirements',
+            topic : 'Requirements',
             id : 5
-            },
-        {
-            onichaTopic: 'Start Here',
-            topic : 'Start Here',
-            id : 6
             }
     ]
 
@@ -45,27 +40,104 @@ export default function Topics({ navigation }) {
             },
         {
             onichaTopic: 'Ebummobi Omumu Ife',
-            topic : 'Lesson Objectives',
+            topic : 'Module Objectives',
             id : 2
             },
         {
-            onichaTopic: 'Start Here 1',
-            topic : 'Start Here',
+            onichaTopic: 'Course Guildlines',
+            topic : 'Course Guildlines',
             id : 3
             },
         {
-            onichaTopic: 'Start Here 2',
-            topic : 'Start Here',
+            onichaTopic: 'Assessments and Grades',
+            topic : 'Assessments and Grades',
             id : 4
             },
         {
-            onichaTopic: 'Start Here 3',
-            topic : 'Start Here',
+            onichaTopic: 'Using the Igbo Keyboard on Windows OS',
+            topic : 'Using the Igbo Keyboard on Windows OS',
             id : 5
             },
         {
-            onichaTopic: 'Start Here',
-            topic : 'Start Here',
+            onichaTopic: 'Using the Igbo Keyboard on Mobile Devices',
+            topic : 'Using the Igbo Keyboard on Mobile Devices',
+            id : 6
+            }
+    ]
+
+
+    const Module2 = [
+        {
+            onichaTopic: 'Ebummobi Omumu Ife',
+            topic : 'Module Objectives',
+            id : 1
+            },
+        {
+            onichaTopic: "Nkowa - Mkpụlụabịdịị n'asụsụ Ọnịcha",
+            topic : 'Introduction - Onicha Alphabets',
+            id : 2
+            },
+        {
+            onichaTopic: 'Mkpụlụabịdịị A - F',
+            topic : 'Letters A - F',
+            id : 3
+            },
+        {
+            onichaTopic: 'Mkpụlụabịdịị G - H',
+            topic : 'Letters G - H',
+            id : 4
+            },
+        {
+            onichaTopic: 'Mkpụlụabịdịị I - KW',
+            topic : 'Letters I - K',
+            id : 5
+            },
+        {
+            onichaTopic: 'Mkpụlụabịdịị L - NY',
+            topic : 'Letters L - N',
+            id : 6
+            },
+        {
+            onichaTopic: 'Mkpụlụabịdịị O - T',
+            topic : 'Letters O - T',
+            id : 7
+            },
+        {
+            onichaTopic: 'Mkpụlụabịdịị U - Z',
+            topic : 'Letters U - Z',
+            id : 8
+            }
+    ]
+
+    const Module3 = [
+        {
+            onichaTopic: 'Ebummobi Omumu Ife',
+            topic : 'Module Objectives',
+            id : 1
+            },
+        {
+            onichaTopic: 'Ebummobi Omumu Ife',
+            topic : 'Module Objectives',
+            id : 2
+            },
+        {
+            onichaTopic: 'Course Guildlines',
+            topic : 'Course Guildlines',
+            id : 3
+            },
+        {
+            onichaTopic: 'Assessments and Grades',
+            topic : 'Assessments and Grades',
+            id : 4
+            },
+        {
+            onichaTopic: 'Using the Igbo Keyboard on Windows OS',
+            topic : 'Using the Igbo Keyboard on Windows OS',
+            id : 5
+            },
+        {
+            onichaTopic: 'Using the Igbo Keyboard on Mobile Devices',
+            topic : 'Using the Igbo Keyboard on Mobile Devices',
             id : 6
             }
     ]
@@ -82,6 +154,13 @@ export default function Topics({ navigation }) {
             data = Module1
             break;
 
+        case 'Module2':
+            data = Module2
+            break;
+    
+        case 'Module3':
+            data = Module3
+            break;
         default:
             break;
     }
@@ -119,16 +198,20 @@ const styles = StyleSheet.create({
 
   header: {
       fontSize: 26,
+      color: '#9722A8'
   },
 
   english: {
       fontSize: 20,
+      color: '#8772BC'
   },
 
   card: {
-      marginTop: 20,
+      marginTop: 15,
       padding: 20,
-      borderWidth: 0.2,
+      borderBottomWidth: 0.2,
       borderRadius: 1,
+      marginTop: 10,
+      borderColor: '#9722A8'
   }
 });

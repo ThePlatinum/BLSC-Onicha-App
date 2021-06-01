@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableWithoutFeedback, Linking, Image, Button, TextInput, Keyboard, Alert } from 'react-native';
+import { StyleSheet, Text, View, TouchableWithoutFeedback, Linking, Image, TextInput, Keyboard, Alert, Pressable } from 'react-native';
 
 
 export default function Login({ navigation }) {
@@ -42,13 +42,11 @@ export default function Login({ navigation }) {
 
           <View
             style={styles.loginButton}>
-            <Button
-                title='Login'
-                color='#9722A8'
-                onPress={() =>{
+            <Pressable style={styles.button} onPress={() =>{
                   navigation.navigate('Modules')
-                }}
-            />
+                }}>
+              <Text style={styles.buttonText}>Login</Text>
+            </Pressable>
           </View>
 
           <View
@@ -83,7 +81,7 @@ const styles = StyleSheet.create({
     paddingTop: 25,
     textAlign: 'center',
     color: '#fff',
-    marginBottom: 110,
+    marginBottom: 100,
   },
 
   loginButton: {
@@ -92,8 +90,24 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
 
+  button : {
+    backgroundColor : 'white',
+    borderRadius: 3,
+    borderColor: '#9722A8',
+    borderWidth: 1
+  },
+
+  buttonText: {
+    color: '#9722A8',
+    fontSize: 18,
+    textAlign : 'center',
+    padding: 7,
+    fontStyle: 'normal',
+    fontWeight: '600',
+  },
+
   input: {
-    height: 45,
+    height: 40,
     margin: 15,
     width: 320,
     fontSize: 20,
@@ -102,6 +116,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     borderColor:'#9722A8',
     marginBottom: 10,
+    fontWeight: '300'
   },
 
   blscLogo: {

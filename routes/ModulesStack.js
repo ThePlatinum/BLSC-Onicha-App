@@ -3,7 +3,6 @@ import Login from '../components/Login'
 import Modules from '../components/Modules'
 import Topics from '../components/Topics'
 import Study from '../components/Study'
-import { createAppContainer } from 'react-navigation'
 
 const screens = {
     Login: {
@@ -19,10 +18,11 @@ const screens = {
         screen: Study
     },
 }
+
 const ModulesStack = createStackNavigator(screens, {
     defaultNavigationOptions: {
         headerShown: false
     }
 })
 
-export default createAppContainer(ModulesStack)
+export default ModulesStack

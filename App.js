@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import * as Font from 'expo-font'
-import Login from './components/Login';
 import { AppLoading } from 'expo'
-import ModulesStack from './routes/ModulesStack'
+import RootDrawer from './routes/RootDrawer';
 
 const getFonts = () => Font.loadAsync({
     'merriweather-bold': require('./assets/fonts/Merriweather-Bold.ttf'),
@@ -18,7 +17,7 @@ export default function App() {
     
     if(!fontsLoaded){
       return (
-        <ModulesStack />
+        <RootDrawer />
       );
     } else{
       return (
@@ -28,5 +27,4 @@ export default function App() {
         />
       );
     }
-  
 }

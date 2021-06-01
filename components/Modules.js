@@ -84,28 +84,35 @@ const styles = StyleSheet.create({
   },
 
   header: {
-      fontSize: 28,
+      fontSize: 26,
+      color: '#9722A8'
       //fontFamily: 'merriweather-bold'
   },
 
   english: {
-      fontSize: 22,
-      fontStyle: 'italic'
+      fontSize: 21,
+      color: '#8772BC'
   },
 
   card: {
-    borderWidth: 0.1,
+    borderBottomWidth: 0.2,
     borderRadius: 1,
+    paddingBottom: 10,
     marginTop: 15,
+    padding: 5,
+    borderColor: '#9722A8'
   },
 
   cardInner: {
-    padding: 10,
+    paddingEnd: 2,
+    padding: 8,
+    alignContent: 'center',
+    alignSelf: 'center'
   },
 
   smallAvaters: {
-    width: '25%',
-    height: '95%',
+    width: '20%',
+    height: 80,
     alignSelf: 'center',
     marginStart: 5,
   }
