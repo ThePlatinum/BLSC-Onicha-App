@@ -8,30 +8,37 @@ export default function Login({ navigation }) {
         {
             onicha: 'Start Here',
             title : 'Start Here',
+            module : 'StartHere'
             },
         {
             onicha: 'Nkowa Ife Omumu a',
             title : 'Introduction to the Course and its Navigation',
+            module : 'Module1'
             },
         {
             onicha: "Mkpụlụ Abịdịị N'Asụsụ Ọnịcha",
             title : 'Alphabets in Onicha Dialect',
+            module : 'Module2'
             },
         {
             onicha: "Ekene N'Asusu Onicha",
             title : "Greetings in Onitsha Dialect",
+            module : 'Module3'
             },
         {
             onicha: "Nkọwa Onwe na Ezi n'ụnọ",
             title : "Introducing Oneself and Family",
+            module : 'Module4'
             },
         {
             onicha: "Usolo Ọnụọgụgụ",
             title : "The Numbering System",
+            module : 'Module5'
             },
         {
             onicha: "Usolo Ọnụọgụgụ",
             title : "Test Your Knowledge",
+            module : 'Test'
             },
     ])
 

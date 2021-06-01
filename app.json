@@ -17,14 +17,17 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier" : "com.blendedlearningcenter.aemmanuel",
+      "buildNumber" : "1.0"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/imgs/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "index.android"
+      "package": "com.blendedlearningcenter.aemmanuel",
+      "versionCode" : 1.0
     },
     "web": {
       "favicon": "./assets/imgs/favicon.png"
