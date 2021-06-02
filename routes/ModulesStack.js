@@ -6,6 +6,7 @@ import Login from '../components/Login'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 var loggedin = false
+var logged = "Login"
 
 const screens = {
     Login: {
@@ -28,6 +29,7 @@ const getData = async () => {
       if(value !== null) {
           if (value === 'true'){
             loggedin = true
+            logged = "Modules"
           }
         // value previously stored
       }
@@ -41,8 +43,8 @@ getData()
 const ModulesStack = createStackNavigator(screens, {
     defaultNavigationOptions: {
         headerShown: false,
-        initialRouteName : loggedin ? "Modules" : "Login"
-    }
+    },
+    initialRouteName: logged
 })
 
 export default ModulesStack

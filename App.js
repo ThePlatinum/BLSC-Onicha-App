@@ -26,7 +26,7 @@ const loadFonts = () =>
       <AppLoading 
         startAsync = {loadFonts}
         onFinish = {() => setLoaded(true)}
-        onError = {console.log('error')}
+        onError = { () => {return (<RootDrawer/>)} }
       />
     )
   }

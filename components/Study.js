@@ -7,7 +7,7 @@ import Header from './Header'
 const One = {
   onichaTopic : 'Nnọọ na Ọmụmụ ịfe nke Asụsụ Ọnịcha',
   topic : 'Welcome to the Onicha Course',
-  header : "Specific Steps to Get You Started in the Course",
+  header : "Specific Steps to Get You Started in the Course 1",
   note : "This course teaches the original form of O̩ni̩cha Ado Igbo language spoken by the sons of the soil (Onitsha indigenes). In this course you will learn the distinctive nasalization and aspiration which are phonologically distinctive from other Igbo dialects (Onumajuru, 2016  download).\r\n\r\nO̩mụmụ ịfe a na-akụzi asụsụ O̩ni̩cha ado nke ndi̩ Igbo, ọ  bụ ndi̩ amụnyelụ n'obodo O̩ni̩cha na-asu ya (Ndị O̩ni̩cha). N'ime nkuzi a, ịga-amu i̩su n'onu nke di̩ iche n'asusu Igbo ndi̩ ọzọ (Onumajuru, 2016  download).\r\n\r\nONICHA DIALECT 101 course is an introductory level course in O̩ni̩cha dialect. (ASỤSỤ ỌNỊCHA 101 bụ nkuzi na-akọwa maka asụsụ O̩ni̩cha).\r\n\r\nBecause the majority of learners need to have discussion around material to build meaning. As this process takes time and to keep us all thinking and talking about the same material to have meaningful exchanges, this course is currently not setup with working ahead/self-study in mind. That being said, some material will be made available well advance of due dates and some early work is accepted.",
   subHeader : "Learn the purpose of the course, the objectives, and what is expected of you",
   videoUrl : "https://drive.google.com/file/d/1aGoWZMSeQnAmAXCA1uHSSAttTSuEdSAE/view?usp=sharing"
@@ -16,7 +16,7 @@ const One = {
 const Two = {
 onichaTopic : 'Nnọọ na Ọmụmụ ịfe nke Asụsụ Ọnịcha',
 topic : 'Welcome to the Onicha Course',
-header : "Specific Steps to Get You Started in the Course in 222",
+header : "Specific Steps to Get You Started in the Course in 2",
 note : "This course teaches the original form of O̩ni̩cha Ado Igbo language spoken by the sons of the soil (Onitsha indigenes). In this course you will learn the distinctive nasalization and aspiration which are phonologically distinctive from other Igbo dialects (Onumajuru, 2016  download).\r\n\r\nO̩mụmụ ịfe a na-akụzi asụsụ O̩ni̩cha ado nke ndi̩ Igbo, ọ  bụ ndi̩ amụnyelụ n'obodo O̩ni̩cha na-asu ya (Ndị O̩ni̩cha). N'ime nkuzi a, ịga-amu i̩su n'onu nke di̩ iche n'asusu Igbo ndi̩ ọzọ (Onumajuru, 2016  download).\r\n\r\nONICHA DIALECT 101 course is an introductory level course in O̩ni̩cha dialect. (ASỤSỤ ỌNỊCHA 101 bụ nkuzi na-akọwa maka asụsụ O̩ni̩cha).\r\n\r\nBecause the majority of learners need to have discussion around material to build meaning. As this process takes time and to keep us all thinking and talking about the same material to have meaningful exchanges, this course is currently not setup with working ahead/self-study in mind. That being said, some material will be made available well advance of due dates and some early work is accepted.\n",
 subHeader : "Learn the purpose of the course, the objectives, and what is expected of you",
 videoUrl : "https://drive.google.com/file/d/1aGoWZMSeQnAmAXCA1uHSSAttTSuEdSAE/view?usp=sharing"
@@ -60,7 +60,7 @@ videoUrl : "https://drive.google.com/file/d/1aGoWZMSeQnAmAXCA1uHSSAttTSuEdSAE/vi
 
 export default function Study( {navigation} ) {
 
-var lessonId = navigation.getParam('id')
+const [lessonId, setId] = useState(navigation.getParam('id'))
 
   const [state, setState] = useState([{
     header: '',    subHeader : '',    paragraph : '',
@@ -68,17 +68,13 @@ var lessonId = navigation.getParam('id')
   }]);
 
   const next = () => {
-    console.log(lessonId)
-    ++lessonId;
+    setId(lessonId + 1)
     studyData(lessonId)
-    console.log(lessonId)
   }
 
   const previous = () => {
-    console.log(lessonId)
-    lessonId--;
+    setId(lessonId - 1)
     studyData(lessonId)
-    console.log(lessonId)
   }
 
   const setValue = (arr) =>{
