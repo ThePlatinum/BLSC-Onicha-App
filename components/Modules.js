@@ -44,7 +44,7 @@ export default function Login({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Header headerText='Modules'/>
+      <Header navigation = {navigation} headerText='Modules'/>
       <FlatList
       keyExtractor={(item) => item.title}
       data={modules}
@@ -85,13 +85,14 @@ const styles = StyleSheet.create({
 
   header: {
       fontSize: 26,
-      color: '#9722A8'
-      //fontFamily: 'merriweather-bold'
+      color: '#9722A8',
+      fontFamily: 'merriweather-Regular'
   },
 
   english: {
-      fontSize: 21,
-      color: '#8772BC'
+      fontSize: 16,
+      color: '#8772BC',
+      fontFamily: 'merriweather-Light'
   },
 
   card: {

@@ -167,7 +167,7 @@ export default function Topics({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Header headerText={navigation.getParam('onicha')}/>
+      <Header navigation={navigation} headerText={navigation.getParam('onicha')}/>
 
       <FlatList
       keyExtractor = {(item) => item.onichaTopic}
@@ -198,12 +198,14 @@ const styles = StyleSheet.create({
 
   header: {
       fontSize: 26,
-      color: '#9722A8'
+      color: '#9722A8',
+      fontFamily: 'merriweather-Regular'
   },
 
   english: {
-      fontSize: 20,
-      color: '#8772BC'
+      fontSize: 18,
+      color: '#8772BC',
+      fontFamily: 'merriweather-Light'
   },
 
   card: {

@@ -1,14 +1,22 @@
 import React, { useState } from 'react';
-import { StatusBar, StyleSheet, Text, View} from 'react-native';
-export default function Header({headerText}) {
+import { StatusBar, StyleSheet, Text, View} from 'react-native'
+import Icon from 'react-native-ionicons';
 
+export default function Header({navigation , headerText}) {
+
+  const openDraw = () => {
+    console.log(navigation)
+    navigation.openDrawer();
+  }
   return (
     <View style={styles.container}>
       <StatusBar
       backgroundColor='#9722A8'/>
-        {/* Image for each Module */}
+        <View style={styles.head}>
+        <Icon name='menu' color='white' onPress={openDraw} style={{paddingLeft: 5}} />
         <Text style={styles.header}>{headerText}</Text>
         {/* Check Box for Completion */}
+        </View>
     </View>
   );
 }
@@ -24,8 +32,17 @@ const styles = StyleSheet.create({
 
   header: {
     color: '#fff',
-    fontSize: 28,
+    fontSize: 26,
     textAlign: 'center',
     fontWeight: '300',
+    flex: 1,
+    paddingRight: 10,
+    fontFamily: 'merriweather-Regular'
+  },
+
+  head : {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'baseline',
   }
 });

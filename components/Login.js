@@ -1,11 +1,22 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableWithoutFeedback, Linking, Image, TextInput, Keyboard, Alert, Pressable } from 'react-native';
-
 
 export default function Login({ navigation }) {
 
   const [mail, setMail] = useState('')
   const [password, setPassword] = useState('')
+
+  const storeData = async () => {
+    try {
+      await AsyncStorage.setItem('LoggedIn', 'true').then(
+        navigation.navigate('Modules')
+      )
+    } catch (e) {
+      console.log(e)
+      navigation.navigate('Login')
+    }
+  }
 
   return (
       <TouchableWithoutFeedback
@@ -42,9 +53,7 @@ export default function Login({ navigation }) {
 
           <View
             style={styles.loginButton}>
-            <Pressable style={styles.button} onPress={() =>{
-                  navigation.navigate('Modules')
-                }}>
+            <Pressable style={styles.button} onPress={storeData}>
               <Text style={styles.buttonText}>Login</Text>
             </Pressable>
           </View>
@@ -52,9 +61,9 @@ export default function Login({ navigation }) {
           <View
           flexDirection='row'
           >
-            <Text >New user? Register at: </Text>
+            <Text style={{fontFamily: 'merriweather-Light'}}>New user? Register at: </Text>
                 <Text 
-                style={{color: 'blue' }}
+                style={{color: 'blue' , fontFamily: 'merriweather-Light'}}
                 onPress={() => Linking.openURL('http://blendedlearningcenter.com')}>
                     blendedlearningcenter.com
                 </Text>
@@ -76,12 +85,14 @@ const styles = StyleSheet.create({
 
   appName: {
     backgroundColor: '#9722A8',
-    fontSize: 38,
+    fontSize: 36,
     paddingBottom: 25,
+    padding: 10,
     paddingTop: 25,
     textAlign: 'center',
     color: '#fff',
     marginBottom: 100,
+    fontFamily: 'merriweather-Regular'
   },
 
   loginButton: {
@@ -91,32 +102,32 @@ const styles = StyleSheet.create({
   },
 
   button : {
-    backgroundColor : 'white',
+    backgroundColor : '#9722A8',
     borderRadius: 3,
-    borderColor: '#9722A8',
-    borderWidth: 1
   },
 
   buttonText: {
-    color: '#9722A8',
+    color: 'white',
     fontSize: 18,
     textAlign : 'center',
     padding: 7,
     fontStyle: 'normal',
     fontWeight: '600',
+    fontFamily: 'merriweather-Light'
   },
 
   input: {
     height: 40,
     margin: 15,
     width: 320,
-    fontSize: 20,
+    fontSize: 16,
     borderBottomWidth: 0.3,
     padding: 5,
     borderRadius: 4,
     borderColor:'#9722A8',
     marginBottom: 10,
-    fontWeight: '300'
+    fontWeight: '300',
+    fontFamily: 'merriweather-LightItalic'
   },
 
   blscLogo: {

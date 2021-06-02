@@ -1,13 +1,14 @@
 import { Video } from 'expo-av';
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View, Button, ScrollView } from 'react-native';
+import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 import Header from './Header'
 
 const One = {
   onichaTopic : 'Nnọọ na Ọmụmụ ịfe nke Asụsụ Ọnịcha',
   topic : 'Welcome to the Onicha Course',
   header : "Specific Steps to Get You Started in the Course",
-  note : "This course teaches the original form of O̩ni̩cha Ado Igbo language spoken by the sons of the soil (Onitsha indigenes). In this course you will learn the distinctive nasalization and aspiration which are phonologically distinctive from other Igbo dialects (Onumajuru, 2016  download).\r\n\r\nO̩mụmụ ịfe a na-akụzi asụsụ O̩ni̩cha ado nke ndi̩ Igbo, ọ  bụ ndi̩ amụnyelụ n'obodo O̩ni̩cha na-asu ya (Ndị O̩ni̩cha). N'ime nkuzi a, ịga-amu i̩su n'onu nke di̩ iche n'asusu Igbo ndi̩ ọzọ (Onumajuru, 2016  download).\r\n\r\nONICHA DIALECT 101 course is an introductory level course in O̩ni̩cha dialect. (ASỤSỤ ỌNỊCHA 101 bụ nkuzi na-akọwa maka asụsụ O̩ni̩cha).\r\n\r\nBecause the majority of learners need to have discussion around material to build meaning. As this process takes time and to keep us all thinking and talking about the same material to have meaningful exchanges, this course is currently not setup with working ahead/self-study in mind. That being said, some material will be made available well advance of due dates and some early work is accepted.\n",
+  note : "This course teaches the original form of O̩ni̩cha Ado Igbo language spoken by the sons of the soil (Onitsha indigenes). In this course you will learn the distinctive nasalization and aspiration which are phonologically distinctive from other Igbo dialects (Onumajuru, 2016  download).\r\n\r\nO̩mụmụ ịfe a na-akụzi asụsụ O̩ni̩cha ado nke ndi̩ Igbo, ọ  bụ ndi̩ amụnyelụ n'obodo O̩ni̩cha na-asu ya (Ndị O̩ni̩cha). N'ime nkuzi a, ịga-amu i̩su n'onu nke di̩ iche n'asusu Igbo ndi̩ ọzọ (Onumajuru, 2016  download).\r\n\r\nONICHA DIALECT 101 course is an introductory level course in O̩ni̩cha dialect. (ASỤSỤ ỌNỊCHA 101 bụ nkuzi na-akọwa maka asụsụ O̩ni̩cha).\r\n\r\nBecause the majority of learners need to have discussion around material to build meaning. As this process takes time and to keep us all thinking and talking about the same material to have meaningful exchanges, this course is currently not setup with working ahead/self-study in mind. That being said, some material will be made available well advance of due dates and some early work is accepted.",
   subHeader : "Learn the purpose of the course, the objectives, and what is expected of you",
   videoUrl : "https://drive.google.com/file/d/1aGoWZMSeQnAmAXCA1uHSSAttTSuEdSAE/view?usp=sharing"
 }
@@ -122,10 +123,9 @@ var lessonId = navigation.getParam('id')
 
   return (
     <View style={styles.mainContainer}>
-      <Header headerText={state.lectureTitle}/>
+      <Header navigation={navigation} headerText={state.lectureTitle}/>
       <View style={styles.container}>
         <View style={styles.video}>
-
           <Video
             source={{uri: state.videoUrl}}
             shouldPlay
@@ -149,23 +149,13 @@ var lessonId = navigation.getParam('id')
           <View
           style={styles.buttonV}
           >
+            <Pressable style={styles.button} onPress={previous}>
+              <Text style={styles.buttonText}>Previous</Text>
+            </Pressable>
 
-            <View style={styles.button}>
-            <Button
-              color='#9722A8'
-              title='Previous'
-              onPress={previous}
-            />
-            </View>
-
-            <View style={styles.button}>
-            <Button
-              color='#9722A8'
-              title='Next'
-              onPress={next}
-            />
-            </View>
-
+            <Pressable style={styles.button} onPress={next}>
+              <Text style={styles.buttonText}>Next</Text>
+            </Pressable>
           </View>
 
         </ScrollView>
@@ -188,19 +178,23 @@ export const styles = StyleSheet.create({
   header: {
     color: '#9722A8',
     fontSize: 26,
-    margin: 10
+    margin: 10,
+    fontFamily: 'merriweather-Regular'
   },
 
   subHeader: {
     fontSize: 22,
-    margin: 10
+    margin: 10,
+    color: '#8772BC',
+    fontFamily: 'merriweather-LightItalic'
   },
 
   paragraph: {
     flex: 1,
     fontSize: 18,
     margin: 10,
-    textAlign: 'justify'
+    textAlign: 'justify',
+    fontFamily: 'merriweather-Light'
   },
 
   buttonV: {
@@ -210,7 +204,17 @@ export const styles = StyleSheet.create({
   },
 
   button: {
-    width: '35%'
+    width: '35%',
+    borderColor: '#9722A8',
+    borderWidth: 0.5,
+  },
+
+  buttonText: {
+    color: '#9722A8',
+    textAlign: 'center',
+    fontSize : 16,
+    padding: 7,
+    fontFamily: 'merriweather-Light'
   },
 
   video: {
