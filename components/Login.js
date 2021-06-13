@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableWithoutFeedback, Linking, Image, TextInput, Keyboard, Alert, Pressable } from 'react-native';
+import { StyleSheet, Text, View, TouchableWithoutFeedback, Linking, Image, TextInput, Keyboard, Alert, Pressable, StatusBar } from 'react-native';
 
 export default function Login({ navigation }) {
 
@@ -19,6 +19,10 @@ export default function Login({ navigation }) {
   }
 
   return (
+    <View style={styles.main}>
+      <StatusBar 
+      backgroundColor = 'white'
+      barStyle='dark-content' />
       <TouchableWithoutFeedback
         onPress={() =>{
           Keyboard.dismiss()
@@ -60,20 +64,27 @@ export default function Login({ navigation }) {
 
           <View
           flexDirection='row'
+          style={{marginBottom: 5}}
           >
-            <Text style={{fontFamily: 'merriweather-Light'}}>New user? Register at: </Text>
+            <Text style={{fontFamily: 'merriweather-Light', fontSize : 10}}>New user? Register at: </Text>
                 <Text 
-                style={{color: 'blue' , fontFamily: 'merriweather-Light'}}
+                style={{color: 'blue' , fontFamily: 'merriweather-Light', fontSize : 10}}
                 onPress={() => Linking.openURL('http://blendedlearningcenter.com')}>
                     blendedlearningcenter.com
                 </Text>
           </View>
         </View>
       </TouchableWithoutFeedback>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  
+  main: {
+    flex: 1,
+  },
+
   container: {
     flex: 1,
     backgroundColor: '#fff',
@@ -91,7 +102,7 @@ const styles = StyleSheet.create({
     paddingTop: 25,
     textAlign: 'center',
     color: '#fff',
-    marginBottom: 100,
+    marginBottom: 80,
     fontFamily: 'merriweather-Regular'
   },
 

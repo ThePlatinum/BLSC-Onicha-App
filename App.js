@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import * as Font from 'expo-font'
-import RootDrawer from './routes/RootDrawer';
-import LoginStack from './routes/LoginStack';
+import RootNavigation from './routes/RootNavigation';
 import AppLoading from 'expo-app-loading';
 
 export default function App() {
@@ -18,7 +17,7 @@ const loadFonts = () =>
 
   if (loaded) {
     return (
-      <RootDrawer />
+      <RootNavigation />
     )
   }
   else {
@@ -26,7 +25,7 @@ const loadFonts = () =>
       <AppLoading 
         startAsync = {loadFonts}
         onFinish = {() => setLoaded(true)}
-        onError = { () => {return (<RootDrawer/>)} }
+        onError = { () => {return (<RootNavigation/>)} }
       />
     )
   }

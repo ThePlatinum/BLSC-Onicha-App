@@ -1,44 +1,68 @@
 import React, { useState } from 'react';
 import Header from './Header'
 import { StyleSheet, Text, View, FlatList, TouchableOpacity, Image } from 'react-native';
-export default function Login({ navigation }) {
+import { useEffect } from 'react';
+import start from '../assets/imgs/start.png'
+import introduction from '../assets/imgs/introduction.png'
+import alphabet from '../assets/imgs/alphabet.png'
+import greeting from '../assets/imgs/greeting.png'
+import introductionemail from '../assets/imgs/Introduction-email.png'
+import number from '../assets/imgs/numbers.png'
+import test from '../assets/imgs/test.png'
 
+
+export default function Login({ navigation }) {
+  useEffect(
+    () => {
+      navigation.addListener('beforeRemove', (e)=> {
+        console.log('Here')
+        e.preventDefault()
+      })
+    },[navigation]
+  )
   // Switch to Canvas APIs if possible
     const [modules] = useState([
         {
             onicha: 'Start Here',
             title : 'Start Here',
-            module : 'StartHere'
+            module : 'StartHere',
+            img: start
             },
         {
             onicha: 'Nkowa Ife Omumu a',
             title : 'Introduction to the Course and its Navigation',
-            module : 'Module1'
+            module : 'Module1',
+            img: introduction
             },
         {
             onicha: "Mkpụlụ Abịdịị N'Asụsụ Ọnịcha",
             title : 'Alphabets in Onicha Dialect',
-            module : 'Module2'
+            module : 'Module2',
+            img: alphabet
             },
         {
             onicha: "Ekene N'Asusu Onicha",
             title : "Greetings in Onitsha Dialect",
-            module : 'Module3'
+            module : 'Module3',
+            img: greeting
             },
         {
             onicha: "Nkọwa Onwe na Ezi n'ụnọ",
             title : "Introducing Oneself and Family",
-            module : 'Module4'
+            module : 'Module4',
+            img: introductionemail
             },
         {
             onicha: "Usolo Ọnụọgụgụ",
             title : "The Numbering System",
-            module : 'Module5'
+            module : 'Module5',
+            img: number
             },
         {
-            onicha: "Usolo Ọnụọgụgụ",
+            onicha: "Test Your Knowledge",
             title : "Test Your Knowledge",
-            module : 'Test'
+            module : 'Test',
+            img: test
             },
     ])
 
@@ -56,7 +80,7 @@ export default function Login({ navigation }) {
             >
             <Image
               style={styles.smallAvaters}
-              source={require('../assets/imgs/adaptive-icon.png')}
+              source={item.img}
             />
             <View
             flex={1}
@@ -84,7 +108,7 @@ const styles = StyleSheet.create({
   },
 
   header: {
-      fontSize: 26,
+      fontSize: 22,
       color: '#9722A8',
       fontFamily: 'merriweather-Regular'
   },
@@ -99,7 +123,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0.2,
     borderRadius: 1,
     paddingBottom: 10,
-    marginTop: 15,
+    marginTop: 10,
     padding: 5,
     borderColor: '#9722A8'
   },
@@ -112,8 +136,8 @@ const styles = StyleSheet.create({
   },
 
   smallAvaters: {
-    width: '20%',
-    height: 80,
+    width: '22%',
+    height: 85,
     alignSelf: 'center',
     marginStart: 5,
   }

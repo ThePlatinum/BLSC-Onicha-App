@@ -5,13 +5,14 @@ import Icon from 'react-native-ionicons';
 export default function Header({navigation , headerText}) {
 
   const openDraw = () => {
-    console.log(navigation)
     navigation.openDrawer();
   }
   return (
     <View style={styles.container}>
       <StatusBar
-      backgroundColor='#9722A8'/>
+        backgroundColor='#9722A8'
+        barStyle='light-content'
+        />
         <View style={styles.head}>
         <Icon name='menu' color='white' onPress={openDraw} style={{paddingLeft: 5}} />
         <Text style={styles.header}>{headerText}</Text>
@@ -32,12 +33,12 @@ const styles = StyleSheet.create({
 
   header: {
     color: '#fff',
-    fontSize: 26,
+    fontSize: 22,
     textAlign: 'center',
     fontWeight: '300',
     flex: 1,
     paddingRight: 10,
-    fontFamily: 'merriweather-Regular'
+    fontFamily: 'merriweather-Light'
   },
 
   head : {

@@ -1,7 +1,6 @@
+import { createAppContainer } from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack'
-import Modules from '../components/Modules'
-import Topics from '../components/Topics'
-import Study from '../components/Study'
+import ModulesDrawerStack from './ModulesDrawerStack'
 import Login from '../components/Login'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
@@ -12,15 +11,9 @@ const screens = {
     Login: {
         screen: Login
     },
-    Modules: {
-        screen: Modules,
-    },
-    Topics: {
-        screen: Topics
-    },
-    Study: {
-        screen: Study
-    },
+    Modules : {
+        screen : ModulesDrawerStack
+    }
 }
 
 const getData = async () => {
@@ -40,11 +33,12 @@ const getData = async () => {
 
 getData()
 
-const ModulesStack = createStackNavigator(screens, {
+
+const RootNavigation = createStackNavigator(screens, {
     defaultNavigationOptions: {
         headerShown: false,
     },
     initialRouteName: logged
 })
 
-export default ModulesStack
+export default createAppContainer(RootNavigation)

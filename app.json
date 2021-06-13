@@ -18,19 +18,19 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier" : "com.blendedlearningcenter.aemmanuel",
-      "buildNumber" : "1.0"
+      "bundleIdentifier": "com.blendedlearningcenter",
+      "buildNumber": "1.0"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/imgs/adaptive-icon.png",
+        "foregroundImage": "./assets/imgs/icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.blendedlearningcenter.aemmanuel",
-      "versionCode" : 1.0
+      "package": "com.blendedlearningcenter",
+      "versionCode": 1
     },
     "web": {
-      "favicon": "./assets/imgs/favicon.png"
+      "favicon": "./assets/imgs/icon.png"
     },
     "description": ""
   }
