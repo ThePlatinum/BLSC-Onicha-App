@@ -28,12 +28,12 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     alignContent: 'center',
     padding: 5,
-    paddingTop: 8,
+    paddingTop: 8
   },
 
   header: {
     color: '#fff',
-    fontSize: 22,
+    fontSize: 24,
     textAlign: 'center',
     fontWeight: '300',
     flex: 1,

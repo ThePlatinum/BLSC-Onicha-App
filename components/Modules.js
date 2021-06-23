@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Header from './Header'
-import { StyleSheet, Text, View, FlatList, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Text, View, FlatList, TouchableOpacity, Image, BackHandler} from 'react-native';
 import { useEffect } from 'react';
 import start from '../assets/imgs/start.png'
 import introduction from '../assets/imgs/introduction.png'
@@ -10,16 +10,19 @@ import introductionemail from '../assets/imgs/Introduction-email.png'
 import number from '../assets/imgs/numbers.png'
 import test from '../assets/imgs/test.png'
 
-
 export default function Login({ navigation }) {
-  useEffect(
-    () => {
-      navigation.addListener('beforeRemove', (e)=> {
-        console.log('Here')
-        e.preventDefault()
-      })
-    },[navigation]
-  )
+  useEffect(() => {
+    const backAction = () => {
+      if (navigation.isFirstRouteInParent != true){
+        return false;
+      }else{
+        return false;
+      }
+    };
+    const backHandler = BackHandler.addEventListener('hardwareBackPress', backAction);
+    return () => backHandler.remove();
+  }, []);
+
   // Switch to Canvas APIs if possible
     const [modules] = useState([
         {

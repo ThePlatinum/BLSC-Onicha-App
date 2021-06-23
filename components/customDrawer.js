@@ -2,18 +2,31 @@ import React, { useState } from 'react';
 import { FlatList, Image, StyleSheet, Text, View } from 'react-native';
 import {SafeAreaView, ScrollView } from 'react-navigation';
 import { DrawerItems } from 'react-navigation-drawer';
+import * as firebase from 'firebase'
 
 export default function customDrawer (props) {
 
-  const [studentName, setStudentName] = useState('Student Name')
-  const [studentMail, setStudentMail] = useState('studentmail@blendedlearningcenter.com')
+  const [studentName, setStudentName] = useState('Student')
+  const [studentMail, setStudentMail] = useState('')
 
-  const [instructorName, setInstructorName] = useState('Instructor Name')
+  const [instructorName, setInstructorName] = useState('Instructor')
   const [instructorPhone, setInstructorPhone] = useState([
-    {phone : '07014293952', number: '1'},
+    {phone : '', number: '1'},
     {phone : '07014293952', number : '2'}
   ])
+  
   const [instructorMail, setInstructorMail] = useState('instructormail@blendedlearningcenter.com')
+
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      //const photoURL = user.photoURL;
+      //const emailVerified = user.emailVerified;
+      //const uid = user.uid;
+      //setStudentName(user.displayName) ;
+      setStudentMail(user.email)
+      // ...
+    }
+  });
 
   return (
     <View  style={styles.container}>

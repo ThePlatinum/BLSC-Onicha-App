@@ -1,16 +1,58 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableWithoutFeedback, Linking, Image, TextInput, Keyboard, Alert, Pressable, StatusBar } from 'react-native';
+import * as firebase from 'firebase'
 
 export default function Login({ navigation }) {
+  
+  const [errorCase, setError] = useState(" error here ")
+
+  var firebaseConfig = {
+    apiKey: "AIzaSyBAS2AovF8_g4VMq3HqUR5fBaqU6GJWNzU",
+    authDomain: "onicha-dialect-igbo-language.firebaseapp.com",
+    projectId: "onicha-dialect-igbo-language",
+    storageBucket: "onicha-dialect-igbo-language.appspot.com",
+    messagingSenderId: "287881468370",
+    appId: "1:287881468370:web:166a99d4f268c52769900b",
+    measurementId: "G-BVJ291DJZS"
+  };
+
+  try { firebase.initializeApp(firebaseConfig) } catch (error) {  }
 
   const [mail, setMail] = useState('')
   const [password, setPassword] = useState('')
 
+function signIn(){
+  try {
+    firebase.auth().signInWithEmailAndPassword(mail, password).then(
+      (results)=> navigation.navigate('Modules')
+      )
+      .catch((error) => {
+      if(error.code == "auth/invalid-email") {
+        setError("Invalid Email. Please check and try again")
+      }
+      if(error.code == "auth/user-disabled") {
+        setError("Your login access is disabled, please contact your instructor")
+      }
+      if(error.code == "auth/wrong-password") {
+        setError("Incorrect password. Please check and try again")
+      }
+      if(error.code == "auth/user-not-found") {
+        setError("Account not subsccribed to this course, please register at blendedlearningcenter.com")
+      }
+      else {
+        setError("An error occured, please try again")
+      }
+      })
+    }
+  catch (error) {  }
+  }
+
   const storeData = async () => {
     try {
+      setError('')
       await AsyncStorage.setItem('LoggedIn', 'true').then(
-        navigation.navigate('Modules')
+        signIn()
       )
     } catch (e) {
       console.log(e)
@@ -50,10 +92,16 @@ export default function Login({ navigation }) {
             style={styles.input}
             placeholder='password'
             typ='password'
+            secureTextEntry={true}
             textContentType='password'
             autoCompleteType= 'password'
             onChangeText={(change) => setPassword(change)}
           />
+
+          <Text
+            style={styles.error}>
+            {errorCase}
+          </Text>
 
           <View
             style={styles.loginButton}>
@@ -144,5 +192,10 @@ const styles = StyleSheet.create({
   blscLogo: {
     resizeMode: 'cover',
     marginBottom: 30,
+  },
+
+  error: {
+    color: 'red',
+    fontFamily: 'merriweather-Light'
   }
 });
