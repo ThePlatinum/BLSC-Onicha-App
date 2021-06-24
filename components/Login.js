@@ -5,7 +5,7 @@ import * as firebase from 'firebase'
 
 export default function Login({ navigation }) {
   
-  const [errorCase, setError] = useState(" error here ")
+  const [errorCase, setError] = useState(" ")
 
   var firebaseConfig = {
     apiKey: "AIzaSyBAS2AovF8_g4VMq3HqUR5fBaqU6GJWNzU",
