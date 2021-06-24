@@ -41,7 +41,7 @@ function signIn(){
         setError("Account not subsccribed to this course, please register at blendedlearningcenter.com")
       }
       else {
-        setError("An error occured, please try again")
+        setError("An error occured! Could be your internet connection, please try again")
       }
       })
     }
