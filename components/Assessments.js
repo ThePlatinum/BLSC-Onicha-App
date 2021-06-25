@@ -1,11 +1,14 @@
 import React from 'react';
-import { StyleSheet, Text, View} from 'react-native';
+import { Linking, StyleSheet, Text, View} from 'react-native';
+import Header from './Header';
 
-export default function Assessments() {
+export default function Assessments({navigation}) {
 
-  const note = "Now that you have gone through the resourses, \n 'Test Your Knowlegde' by taking the Assesements on:"
+  const note = "Now that you have gone through the resourses, \n \n 'Test Your Knowlegde' \n \n by taking the Assesements on"
     return (
         <View style={styles.mainContainer}>
+        <Header navigation={navigation} headerText=''/>
+        <View style={styles.main}>
             <Text style={styles.great}>
                 Great!
             </Text>
@@ -13,14 +16,14 @@ export default function Assessments() {
                 {note}
             </Text>
             <Text 
-                style={{color: 'blue' , fontFamily: 'merriweather-Light', fontSize : 20, marginBottom : 50}}
+                style={{color: 'blue' , fontFamily: 'merriweather-Light', fontSize : 40, marginBottom : 50, textAlign: 'center'}}
                 onPress={() => Linking.openURL("https://canvas.instructure.com")}>
                     Canvas
             </Text>
-            <Text style={styles.note}>
-                Assesements are currently only available on the canvas account
+            <Text style={styles.noteBoard}>
+                Assesements are currently available only on the canvas account
             </Text>
-            
+          </View>
         </View>
     )
 }
@@ -30,27 +33,35 @@ export const styles = StyleSheet.create({
     flex: 1
   },
 
-  note:{
-    fontSize: 12,
-    margin: 5,
-    color: '#8772BC',
-    fontFamily: 'merriweather-LightItalic'
+  main: {
+    flex: 1,
+    justifyContent: 'center',
+    margin: 30,
   },
 
-  great:{
-    fontSize: 30,
-    margin: 10,
+  noteBoard: {
+    fontSize: 14,
+    margin: 5,
+    color: '#8772BC',
+    fontFamily: 'merriweather-LightItalic',
+    textAlign: 'center'
+  },
+
+  great: {
+    fontSize: 60,
     color: '#9722A8',
-    marginBottom: 70,
-    fontFamily: 'merriweather-Regular'
+    marginBottom: 90,
+    fontFamily: 'merriweather-Regular',
+    justifyContent: 'center',
+    textAlign: 'center'
   },
 
   note: {
-    fontSize: 16,
-    margin: 10,
-    marginBottom: 10,
+    fontSize: 20,
+    marginBottom: 30,
     marginTop: 10,
-    color: '#8772BC',
-    fontFamily: 'merriweather-Regular'
+    fontFamily: 'merriweather-Light',
+    textAlign: 'center',
+    fontWeight: '300'
   }
 });

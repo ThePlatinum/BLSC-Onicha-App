@@ -342,7 +342,7 @@ const [lessonId, setId] = useState(navigation.getParam('id'))
         break;
 
       case 6:
-        //setValue(Six)
+        navigation.navigate("EndNew", {"moduleName":" \n'Start Here'"})
         break;
       
       case 7:
@@ -370,7 +370,7 @@ const [lessonId, setId] = useState(navigation.getParam('id'))
         break;
       
       case 13:
-        //setValue(One)
+        navigation.navigate("EndNew", {"moduleName":" \n'Nkowa Ife Omumu a'"})
         break;
 
       case 14:
@@ -406,7 +406,7 @@ const [lessonId, setId] = useState(navigation.getParam('id'))
         break;
 
       case 22:
-        //setValue(Eleven)
+        navigation.navigate("EndNew", {"moduleName":" \n'Mkpụlụ Abịdịị N\'Asụsụ Ọnịcha'"})
         break;
       
       case 23:
@@ -426,7 +426,7 @@ const [lessonId, setId] = useState(navigation.getParam('id'))
         break;
       
       case 27:
-        //setValue()
+        navigation.navigate("EndNew", {"moduleName":" \n'Ekene N'Asusu Onicha'"})
         break;
 
       case 28:
@@ -450,7 +450,7 @@ const [lessonId, setId] = useState(navigation.getParam('id'))
         break;
       
       case 33:
-        //setValue()
+        navigation.navigate("EndNew", {"moduleName":" \n'Nkọwa Onwe na Ezi n\'ụnọ'"})
         break;
 
       case 34:
