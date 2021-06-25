@@ -205,6 +205,7 @@ const styles = StyleSheet.create({
 
   error: {
     color: 'red',
-    fontFamily: 'merriweather-Light'
+    fontFamily: 'merriweather-Light',
+    textAlign: 'center'
   }
 });
