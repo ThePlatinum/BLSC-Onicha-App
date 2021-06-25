@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableWithoutFeedback, Linking, Image, TextInput, Keyboard, Alert, Pressable, StatusBar } from 'react-native';
+import { StyleSheet, Text, View, TouchableWithoutFeedback, Linking, Image, TextInput, Keyboard, Alert, Pressable, StatusBar, ScrollView } from 'react-native';
 import * as firebase from 'firebase'
 
 export default function Login({ navigation }) {
@@ -71,6 +71,7 @@ function signIn(){
         }}>
 
         <View style={styles.container}>
+        {/* <ScrollView style={styles.scroll}> */}
           <Text style={styles.appName}>
             Igbo Language Onicha Ado Dialect
           </Text>
@@ -122,6 +123,7 @@ function signIn(){
                 </Text>
           </View>
         </View>
+      {/* </ScrollView> */}
       </TouchableWithoutFeedback>
     </View>
   );
@@ -134,12 +136,19 @@ const styles = StyleSheet.create({
   },
 
   container: {
+    display: 'flex',
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
     paddingLeft: 30,
     paddingRight: 30,
+    height: '100%'
+  },
+
+  scroll : {
+    flex: 1,
+  //   height: '100%'
   },
 
   appName: {
