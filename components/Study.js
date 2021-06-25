@@ -468,6 +468,10 @@ const [lessonId, setId] = useState(navigation.getParam('id'))
       case 37:
         setValue(ThirtyTwo)
         break;
+      
+      case 38:
+        navigation.navigate('Assessments')
+        break;
     }
   }
 

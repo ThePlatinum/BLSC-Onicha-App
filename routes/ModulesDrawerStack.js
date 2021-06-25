@@ -3,6 +3,8 @@ import Modules from '../components/Modules'
 import Topics from '../components/Topics'
 import Study from '../components/Study'
 import customDrawer from '../components/customDrawer'
+import Assessments from '../components/Assessments'
+import EndNew from '../components/EndNew'
 import { createStackNavigator } from 'react-navigation-stack'
 
 const screens = {
@@ -15,6 +17,12 @@ const screens = {
     Study: {
         screen: Study
     },
+    Assessments: {
+        screen: Assessments
+    },
+    EndNew: {
+        screen: EndNew
+    }
 }
 
 const ModulesStack = createStackNavigator(screens,{
