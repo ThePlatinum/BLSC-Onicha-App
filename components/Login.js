@@ -10,13 +10,14 @@ export default function Login({ navigation }) {
   var firebaseConfig = {
     apiKey: "AIzaSyBAS2AovF8_g4VMq3HqUR5fBaqU6GJWNzU",
     authDomain: "onicha-dialect-igbo-language.firebaseapp.com",
-    projectId: "onicha-dialect-igbo-language",
-    storageBucket: "onicha-dialect-igbo-language.appspot.com",
+    projectId: "organizing-unit-caccf",
+    storageBucket: "organizing-unit-caccf.appspot.com",
     messagingSenderId: "287881468370",
     appId: "1:287881468370:web:166a99d4f268c52769900b",
     measurementId: "G-BVJ291DJZS"
   };
 
+  
   try { firebase.initializeApp(firebaseConfig) } catch (error) {  }
 
   const [mail, setMail] = useState('')

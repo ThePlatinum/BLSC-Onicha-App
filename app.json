@@ -16,17 +16,6 @@
     "assetBundlePatterns": [
       "**/*"
     ],
-    "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.blendedlearningcenter.learnonicha",
-      "buildNumber": "1.1.0",
-      "config": {
-        "googleSignIn": {
-          "reservedClientId": "com.googleusercontent.apps.287881468370-j25jlnkfeb4629pdeusr2e2j30c4rqdg"
-        }
-      },
-      "googleServicesFile": "./GoogleService-Info.plist"
-    },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/imgs/icon.png",
