@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FlatList, Image, StyleSheet, Text, View } from 'react-native';
-import {SafeAreaView, ScrollView } from 'react-navigation';
+import { SafeAreaView, ScrollView } from 'react-navigation';
 import { DrawerItems } from 'react-navigation-drawer';
 import * as firebase from 'firebase'
 

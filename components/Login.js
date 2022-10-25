@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableWithoutFeedback, Linking, Image, TextInput, Keyboard, Alert, Pressable, StatusBar, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, TouchableWithoutFeedback, Linking, Image, TextInput, Keyboard, Pressable, StatusBar } from 'react-native';
 import * as firebase from 'firebase'
 
 export default function Login({ navigation }) {
