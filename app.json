@@ -1,0 +1,34 @@
+{
+  "expo": {
+    "name": "BLSC-Onicha-App",
+    "slug": "BLSC-Onicha-App",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/imgs/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/imgs/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FFFFFF"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/imgs/icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.lordplatinum.BLSCOnichaApp"
+    },
+    "web": {
+      "favicon": "./assets/imgs/icon.png"
+    }
+  }
+}

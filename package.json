@@ -1,36 +1,30 @@
 {
+  "name": "blsc-onicha-app",
+  "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web",
-    "eject": "expo eject"
+    "web": "expo start --web"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "~1.17.3",
-    "@react-native-community/masked-view": "^0.1.11",
-    "expo": "^46.0.0",
-    "expo-app-loading": "~2.1.0",
-    "expo-asset": "~8.6.1",
+    "@react-navigation/drawer": "^6.5.0",
+    "@react-navigation/native": "^6.0.13",
+    "@react-navigation/stack": "^6.3.2",
+    "expo": "~46.0.16",
     "expo-av": "~12.0.4",
+    "expo-font": "~10.2.0",
+    "expo-splash-screen": "~0.16.2",
     "expo-status-bar": "~1.4.0",
-    "firebase": "8.2.3",
     "react": "18.0.0",
-    "react-dom": "18.0.0",
     "react-native": "0.69.6",
-    "react-native-gesture-handler": "^2.8.0",
-    "react-native-ionicons": "^4.6.5",
-    "react-native-reanimated": "^2.11.0",
-    "react-native-safe-area-context": "^4.4.1",
-    "react-native-safe-area-view": "^1.1.1",
-    "react-native-screens": "^3.18.2",
-    "react-native-web": "~0.18.7",
-    "react-native-youtube-iframe": "^2.1.0",
-    "react-navigation": "^4.4.4",
-    "react-navigation-drawer": "^2.7.1",
-    "react-navigation-stack": "^2.10.4",
-    "react-player": "^2.9.0"
+    "react-native-gesture-handler": "~2.5.0",
+    "react-native-ionicons": "^4.x",
+    "react-native-reanimated": "~2.9.1",
+    "react-native-safe-area-context": "4.3.1",
+    "react-native-screens": "~3.15.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.6"
