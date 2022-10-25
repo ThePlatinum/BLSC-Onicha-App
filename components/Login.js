@@ -124,9 +124,9 @@ const styles = StyleSheet.create({
 
   buttonText: {
     color: 'white',
-    fontSize: 22,
+    fontSize: 20,
     textAlign: 'center',
-    padding: 15,
+    padding: 12,
     fontFamily: 'merriweather-Regular'
   },
 
