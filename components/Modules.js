@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import Header from './Header'
 import { StyleSheet, Text, View, FlatList, TouchableOpacity, Image, BackHandler } from 'react-native';
 import { useEffect } from 'react';
-import start from '../assets/imgs/start.png'
-import introduction from '../assets/imgs/introduction.png'
-import alphabet from '../assets/imgs/alphabet.png'
-import greeting from '../assets/imgs/greeting.png'
-import introductionemail from '../assets/imgs/Introduction-email.png'
+import start from '../assets/imgs/start.jpeg'
+import introduction from '../assets/imgs/introduction.jpeg'
+import alphabet from '../assets/imgs/alphabet.jpeg'
+import greeting from '../assets/imgs/greeting.jpeg'
+import introductionemail from '../assets/imgs/Introduction-email.jpeg'
 import number from '../assets/imgs/numbers.png'
-import test from '../assets/imgs/test.png'
+import test from '../assets/imgs/test.jpeg'
 
 export default function Login({ navigation }) {
   useEffect(() => {
