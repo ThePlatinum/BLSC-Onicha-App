@@ -222,11 +222,12 @@ export default function Topics({ navigation }) {
       data = Module5
       break;
     default:
+      navigation.navigate('Assessments', {'item': route.params?.item})
       break;
   }
   return (
     <View style={styles.container}>
-      <Header navigation={navigation} headerText={route.params?.onicha} />
+      <Header navigation={navigation} headerText={route.params?.item.onicha} />
 
       <FlatList
         keyExtractor={(item) => item.onichaTopic}
